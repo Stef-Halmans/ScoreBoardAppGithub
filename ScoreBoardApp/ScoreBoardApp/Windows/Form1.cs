@@ -16,5 +16,15 @@ namespace ScoreBoardApp
         {
             InitializeComponent();
         }
+
+        private void SplitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void ListView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

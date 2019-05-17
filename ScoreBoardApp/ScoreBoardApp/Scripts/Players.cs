@@ -13,6 +13,7 @@ namespace ScoreBoardApp
     public class Players
     {
         public string Name;
+        public int Score;
         public List<string> Data;
     }
 }
