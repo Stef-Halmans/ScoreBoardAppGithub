@@ -33,6 +33,13 @@
             this.Player1Score = new System.Windows.Forms.TextBox();
             this.listView3 = new System.Windows.Forms.ListView();
             this.Player2Score = new System.Windows.Forms.TextBox();
+            this.KickButton1 = new System.Windows.Forms.Button();
+            this.HitButton1 = new System.Windows.Forms.Button();
+            this.TakeDownButton1 = new System.Windows.Forms.Button();
+            this.TakeDownButton2 = new System.Windows.Forms.Button();
+            this.HitButton2 = new System.Windows.Forms.Button();
+            this.KickButton2 = new System.Windows.Forms.Button();
+            this.Header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -41,11 +48,18 @@
             // 
             // listView1
             // 
-            this.listView1.Location = new System.Drawing.Point(32, 57);
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Header});
+            this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView1.FullRowSelect = true;
+            this.listView1.GridLines = true;
+            this.listView1.Location = new System.Drawing.Point(43, 57);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(296, 579);
             this.listView1.TabIndex = 0;
+            this.listView1.TileSize = new System.Drawing.Size(500, 66);
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.ListView1_SelectedIndexChanged);
             // 
             // splitContainer1
@@ -55,12 +69,18 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.TakeDownButton1);
+            this.splitContainer1.Panel1.Controls.Add(this.HitButton1);
+            this.splitContainer1.Panel1.Controls.Add(this.KickButton1);
             this.splitContainer1.Panel1.Controls.Add(this.Player1Score);
             this.splitContainer1.Panel1.Controls.Add(this.listView1);
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.TakeDownButton2);
             this.splitContainer1.Panel2.Controls.Add(this.listView3);
+            this.splitContainer1.Panel2.Controls.Add(this.HitButton2);
+            this.splitContainer1.Panel2.Controls.Add(this.KickButton2);
             this.splitContainer1.Panel2.Controls.Add(this.Player2Score);
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.SplitContainer1_Panel2_Paint);
             this.splitContainer1.Size = new System.Drawing.Size(1887, 995);
@@ -69,7 +89,7 @@
             // 
             // Player1Score
             // 
-            this.Player1Score.Font = new System.Drawing.Font("Microsoft Sans Serif", 99.9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Player1Score.Font = new System.Drawing.Font("Microsoft Sans Serif", 100F);
             this.Player1Score.Location = new System.Drawing.Point(400, 124);
             this.Player1Score.Multiline = true;
             this.Player1Score.Name = "Player1Score";
@@ -77,10 +97,11 @@
             this.Player1Score.TabIndex = 1;
             this.Player1Score.Text = "1";
             this.Player1Score.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Player1Score.TextChanged += new System.EventHandler(this.Player1Score_TextChanged);
             // 
             // listView3
             // 
-            this.listView3.Location = new System.Drawing.Point(37, 57);
+            this.listView3.Location = new System.Drawing.Point(610, 57);
             this.listView3.Name = "listView3";
             this.listView3.Size = new System.Drawing.Size(296, 579);
             this.listView3.TabIndex = 2;
@@ -89,14 +110,79 @@
             // Player2Score
             // 
             this.Player2Score.Font = new System.Drawing.Font("Microsoft Sans Serif", 99.9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Player2Score.Location = new System.Drawing.Point(405, 124);
+            this.Player2Score.Location = new System.Drawing.Point(102, 124);
             this.Player2Score.Multiline = true;
             this.Player2Score.Name = "Player2Score";
             this.Player2Score.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Player2Score.Size = new System.Drawing.Size(400, 400);
             this.Player2Score.TabIndex = 1;
-            this.Player2Score.Text = "2";
+            this.Player2Score.Text = "10";
             this.Player2Score.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // KickButton1
+            // 
+            this.KickButton1.Location = new System.Drawing.Point(55, 743);
+            this.KickButton1.Name = "KickButton1";
+            this.KickButton1.Size = new System.Drawing.Size(200, 200);
+            this.KickButton1.TabIndex = 2;
+            this.KickButton1.Text = "Trap";
+            this.KickButton1.UseVisualStyleBackColor = true;
+            this.KickButton1.Click += new System.EventHandler(this.KickButton1_Click);
+            // 
+            // HitButton1
+            // 
+            this.HitButton1.Location = new System.Drawing.Point(373, 743);
+            this.HitButton1.Name = "HitButton1";
+            this.HitButton1.Size = new System.Drawing.Size(200, 200);
+            this.HitButton1.TabIndex = 3;
+            this.HitButton1.Text = "Stoot";
+            this.HitButton1.UseVisualStyleBackColor = true;
+            this.HitButton1.Click += new System.EventHandler(this.HitButton1_Click);
+            // 
+            // TakeDownButton1
+            // 
+            this.TakeDownButton1.Location = new System.Drawing.Point(672, 743);
+            this.TakeDownButton1.Name = "TakeDownButton1";
+            this.TakeDownButton1.Size = new System.Drawing.Size(200, 200);
+            this.TakeDownButton1.TabIndex = 4;
+            this.TakeDownButton1.Text = "TakeDown";
+            this.TakeDownButton1.UseVisualStyleBackColor = true;
+            this.TakeDownButton1.Click += new System.EventHandler(this.TakeDownButton1_Click);
+            // 
+            // TakeDownButton2
+            // 
+            this.TakeDownButton2.Location = new System.Drawing.Point(680, 743);
+            this.TakeDownButton2.Name = "TakeDownButton2";
+            this.TakeDownButton2.Size = new System.Drawing.Size(200, 200);
+            this.TakeDownButton2.TabIndex = 7;
+            this.TakeDownButton2.Text = "TakeDown";
+            this.TakeDownButton2.UseVisualStyleBackColor = true;
+            this.TakeDownButton2.Click += new System.EventHandler(this.TakeDownButton2_Click);
+            // 
+            // HitButton2
+            // 
+            this.HitButton2.Location = new System.Drawing.Point(381, 743);
+            this.HitButton2.Name = "HitButton2";
+            this.HitButton2.Size = new System.Drawing.Size(200, 200);
+            this.HitButton2.TabIndex = 6;
+            this.HitButton2.Text = "Stoot";
+            this.HitButton2.UseVisualStyleBackColor = true;
+            this.HitButton2.Click += new System.EventHandler(this.HitButton2_Click);
+            // 
+            // KickButton2
+            // 
+            this.KickButton2.Location = new System.Drawing.Point(63, 743);
+            this.KickButton2.Name = "KickButton2";
+            this.KickButton2.Size = new System.Drawing.Size(200, 200);
+            this.KickButton2.TabIndex = 5;
+            this.KickButton2.Text = "Trap";
+            this.KickButton2.UseVisualStyleBackColor = true;
+            this.KickButton2.Click += new System.EventHandler(this.KickButton2_Click);
+            // 
+            // Header
+            // 
+            this.Header.Text = "Hit";
+            this.Header.Width = 300;
             // 
             // Form1
             // 
@@ -126,6 +212,13 @@
         private System.Windows.Forms.TextBox Player1Score;
         private System.Windows.Forms.TextBox Player2Score;
         private System.Windows.Forms.ListView listView3;
+        private System.Windows.Forms.Button TakeDownButton1;
+        private System.Windows.Forms.Button HitButton1;
+        private System.Windows.Forms.Button KickButton1;
+        private System.Windows.Forms.Button TakeDownButton2;
+        private System.Windows.Forms.Button HitButton2;
+        private System.Windows.Forms.Button KickButton2;
+        private System.Windows.Forms.ColumnHeader Header;
     }
 }
 
