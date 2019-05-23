@@ -41,9 +41,10 @@
             // 
             // listView1
             // 
-            this.listView1.Location = new System.Drawing.Point(32, 57);
+            this.listView1.Location = new System.Drawing.Point(18, 37);
+            this.listView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(296, 579);
+            this.listView1.Size = new System.Drawing.Size(168, 375);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.ListView1_SelectedIndexChanged);
@@ -51,6 +52,7 @@
             // splitContainer1
             // 
             this.splitContainer1.Location = new System.Drawing.Point(0, -1);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -63,52 +65,57 @@
             this.splitContainer1.Panel2.Controls.Add(this.listView3);
             this.splitContainer1.Panel2.Controls.Add(this.Player2Score);
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.SplitContainer1_Panel2_Paint);
-            this.splitContainer1.Size = new System.Drawing.Size(1887, 995);
-            this.splitContainer1.SplitterDistance = 939;
+            this.splitContainer1.Size = new System.Drawing.Size(1061, 642);
+            this.splitContainer1.SplitterDistance = 527;
+            this.splitContainer1.SplitterWidth = 2;
             this.splitContainer1.TabIndex = 3;
             // 
             // Player1Score
             // 
             this.Player1Score.Font = new System.Drawing.Font("Microsoft Sans Serif", 99.9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Player1Score.Location = new System.Drawing.Point(400, 124);
+            this.Player1Score.Location = new System.Drawing.Point(225, 80);
+            this.Player1Score.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Player1Score.Multiline = true;
             this.Player1Score.Name = "Player1Score";
-            this.Player1Score.Size = new System.Drawing.Size(400, 400);
+            this.Player1Score.Size = new System.Drawing.Size(227, 259);
             this.Player1Score.TabIndex = 1;
             this.Player1Score.Text = "1";
             this.Player1Score.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // listView3
             // 
-            this.listView3.Location = new System.Drawing.Point(37, 57);
+            this.listView3.Location = new System.Drawing.Point(21, 37);
+            this.listView3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(296, 579);
+            this.listView3.Size = new System.Drawing.Size(168, 375);
             this.listView3.TabIndex = 2;
             this.listView3.UseCompatibleStateImageBehavior = false;
             // 
             // Player2Score
             // 
             this.Player2Score.Font = new System.Drawing.Font("Microsoft Sans Serif", 99.9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Player2Score.Location = new System.Drawing.Point(405, 124);
+            this.Player2Score.Location = new System.Drawing.Point(228, 80);
+            this.Player2Score.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Player2Score.Multiline = true;
             this.Player2Score.Name = "Player2Score";
             this.Player2Score.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Player2Score.Size = new System.Drawing.Size(400, 400);
+            this.Player2Score.Size = new System.Drawing.Size(227, 259);
             this.Player2Score.TabIndex = 1;
             this.Player2Score.Text = "2";
             this.Player2Score.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1888, 992);
+            this.ClientSize = new System.Drawing.Size(1062, 640);
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
