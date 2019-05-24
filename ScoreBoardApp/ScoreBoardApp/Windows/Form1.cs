@@ -32,15 +32,6 @@ namespace ScoreBoardApp
                 Player2Score.Text = Program.ScorePlayer2.ToString();
             }
         }
-        private void SplitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void ListView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void KickButton1_Click(object sender, EventArgs e)
         {
@@ -72,9 +63,6 @@ namespace ScoreBoardApp
             ChangeScore("Player2", 3);
         }
 
-        private void Player1Score_TextChanged(object sender, EventArgs e)
-        {
 
-        }
     }
 }
