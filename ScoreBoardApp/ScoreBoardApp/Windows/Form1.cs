@@ -16,19 +16,19 @@ namespace ScoreBoardApp
         public Form1()
         {
             InitializeComponent();
-            data = Program.DatabaseController.GetData();
+            //data = Program.DatabaseController.GetData();
             Player1Score.Text = Program.ScorePlayer1.ToString();
             Player2Score.Text = Program.ScorePlayer2.ToString();
         }
 
         public void ChangeScore(string player, int score)
         {
-            if(player == "Player1")
+            if(player == "1")
             {
                 Program.ScorePlayer1 += score;
                 Player1Score.Text = Program.ScorePlayer1.ToString();
             }
-            else if(player == "Player2")
+            else if(player == "2")
             {
                 Program.ScorePlayer2 += score;
                 Player2Score.Text = Program.ScorePlayer2.ToString();
@@ -37,38 +37,38 @@ namespace ScoreBoardApp
 
         private void KickButton1_Click(object sender, EventArgs e)
         {
-            ChangeScore("Player1", 2);
-            Program.DatabaseController.SubmitData("Player1","Kick");
+            ChangeScore("1", 2);
+            Program.DatabaseController.SubmitData("1","2");
         }
 
         private void HitButton1_Click(object sender, EventArgs e)
         {
-            ChangeScore("Player1", 1);
-            Program.DatabaseController.SubmitData("Player1", "Hit");
+            ChangeScore("1", 1);
+            Program.DatabaseController.SubmitData("1", "1");
         }
 
         private void TakeDownButton1_Click(object sender, EventArgs e)
         {
-            ChangeScore("Player1", 3);
-            Program.DatabaseController.SubmitData("Player1", "TakeDown");
+            ChangeScore("1", 3);
+            Program.DatabaseController.SubmitData("1", "3");
         }
 
         private void KickButton2_Click(object sender, EventArgs e)
         {
-            ChangeScore("Player2", 2);
-            Program.DatabaseController.SubmitData("Player2", "Kick");
+            ChangeScore("2", 2);
+            Program.DatabaseController.SubmitData("2", "2");
         }
 
         private void HitButton2_Click(object sender, EventArgs e)
         {
-            ChangeScore("Player2", 1);
-            Program.DatabaseController.SubmitData("Player2", "Hit");
+            ChangeScore("2", 1);
+            Program.DatabaseController.SubmitData("2", "1");
         }
 
         private void TakeDownButton2_Click(object sender, EventArgs e)
         {
-            ChangeScore("Player2", 3);
-            Program.DatabaseController.SubmitData("Player2", "TakeDown");
+            ChangeScore("2", 3);
+            Program.DatabaseController.SubmitData("2", "3");
         }
 
 

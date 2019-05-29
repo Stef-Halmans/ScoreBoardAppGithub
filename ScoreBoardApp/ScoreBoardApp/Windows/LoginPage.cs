@@ -32,7 +32,7 @@ namespace ScoreBoardApp.Windows
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            if (Program.login.CanLogin(username, password))
+            if (Program.Login.CanLogin(username, password))
             {
                 Form1 form1 = new Form1();
                 this.Hide();
