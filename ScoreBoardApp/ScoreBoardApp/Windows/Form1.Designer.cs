@@ -40,6 +40,8 @@
             this.listView3 = new System.Windows.Forms.ListView();
             this.HitButton2 = new System.Windows.Forms.Button();
             this.KickButton2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -74,6 +76,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.button1);
             this.splitContainer1.Panel1.Controls.Add(this.Player1Score);
             this.splitContainer1.Panel1.Controls.Add(this.TakeDownButton1);
             this.splitContainer1.Panel1.Controls.Add(this.HitButton1);
@@ -82,6 +85,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.button2);
             this.splitContainer1.Panel2.Controls.Add(this.Player2Score);
             this.splitContainer1.Panel2.Controls.Add(this.TakeDownButton2);
             this.splitContainer1.Panel2.Controls.Add(this.listView3);
@@ -107,7 +111,7 @@
             // 
             // TakeDownButton1
             // 
-            this.TakeDownButton1.Location = new System.Drawing.Point(672, 743);
+            this.TakeDownButton1.Location = new System.Drawing.Point(487, 743);
             this.TakeDownButton1.Name = "TakeDownButton1";
             this.TakeDownButton1.Size = new System.Drawing.Size(200, 200);
             this.TakeDownButton1.TabIndex = 4;
@@ -117,7 +121,7 @@
             // 
             // HitButton1
             // 
-            this.HitButton1.Location = new System.Drawing.Point(373, 743);
+            this.HitButton1.Location = new System.Drawing.Point(256, 743);
             this.HitButton1.Name = "HitButton1";
             this.HitButton1.Size = new System.Drawing.Size(200, 200);
             this.HitButton1.TabIndex = 3;
@@ -127,7 +131,7 @@
             // 
             // KickButton1
             // 
-            this.KickButton1.Location = new System.Drawing.Point(55, 743);
+            this.KickButton1.Location = new System.Drawing.Point(27, 743);
             this.KickButton1.Name = "KickButton1";
             this.KickButton1.Size = new System.Drawing.Size(200, 200);
             this.KickButton1.TabIndex = 2;
@@ -152,7 +156,7 @@
             // 
             // TakeDownButton2
             // 
-            this.TakeDownButton2.Location = new System.Drawing.Point(680, 743);
+            this.TakeDownButton2.Location = new System.Drawing.Point(477, 743);
             this.TakeDownButton2.Name = "TakeDownButton2";
             this.TakeDownButton2.Size = new System.Drawing.Size(200, 200);
             this.TakeDownButton2.TabIndex = 7;
@@ -170,7 +174,7 @@
             // 
             // HitButton2
             // 
-            this.HitButton2.Location = new System.Drawing.Point(381, 743);
+            this.HitButton2.Location = new System.Drawing.Point(251, 743);
             this.HitButton2.Name = "HitButton2";
             this.HitButton2.Size = new System.Drawing.Size(200, 200);
             this.HitButton2.TabIndex = 6;
@@ -180,13 +184,32 @@
             // 
             // KickButton2
             // 
-            this.KickButton2.Location = new System.Drawing.Point(63, 743);
+            this.KickButton2.Location = new System.Drawing.Point(25, 743);
             this.KickButton2.Name = "KickButton2";
             this.KickButton2.Size = new System.Drawing.Size(200, 200);
             this.KickButton2.TabIndex = 5;
             this.KickButton2.Text = "Trap";
             this.KickButton2.UseVisualStyleBackColor = true;
             this.KickButton2.Click += new System.EventHandler(this.KickButton2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(717, 743);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(200, 200);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Geen score";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(706, 743);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(200, 200);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Geen score";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -224,6 +247,8 @@
         private System.Windows.Forms.ColumnHeader Header;
         private System.Windows.Forms.Label Player1Score;
         private System.Windows.Forms.Label Player2Score;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

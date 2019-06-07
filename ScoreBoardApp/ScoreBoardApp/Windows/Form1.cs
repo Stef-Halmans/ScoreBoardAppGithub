@@ -38,7 +38,7 @@ namespace ScoreBoardApp
         private void KickButton1_Click(object sender, EventArgs e)
         {
             ChangeScore("1", 2);
-            Program.DatabaseController.SubmitData("1","2");
+            Program.DatabaseController.SubmitData("1", "2");
         }
 
         private void HitButton1_Click(object sender, EventArgs e)
@@ -71,6 +71,9 @@ namespace ScoreBoardApp
             Program.DatabaseController.SubmitData("2", "3");
         }
 
+        private void Button1_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
