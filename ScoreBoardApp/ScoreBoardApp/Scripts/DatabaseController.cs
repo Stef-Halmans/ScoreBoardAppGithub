@@ -35,12 +35,16 @@ public class DatabaseController
         {
             using (CryptoStream cryptoStream = new CryptoStream(memoryStream, encryption.CreateEncryptor(), CryptoStreamMode.Write))
             {
+                Console.WriteLine(dataBytes.Length.ToString());
                 cryptoStream.Write(dataBytes, 0, dataBytes.Length);
+ 
             }
-
             dataToSend = memoryStream.ToArray();
         }
-        Console.WriteLine(Encoding.Default.GetString(dataToSend));
+        for (int i = 0; i < dataToSend.Length; i++){
+            Console.WriteLine(dataToSend[i]);
+        }
+
 
 
 
