@@ -34,9 +34,9 @@ namespace ScoreBoardApp.Windows
         {
             if (Program.Login.CanLogin(username, password))
             {
-                Form1 form1 = new Form1();
+                ScoreBoard scoreBoard = new ScoreBoard();
                 this.Hide();
-                form1.ShowDialog();
+                scoreBoard.ShowDialog();
             }
         }
     }
