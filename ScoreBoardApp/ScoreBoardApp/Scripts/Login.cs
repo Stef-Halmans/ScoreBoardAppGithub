@@ -25,7 +25,7 @@ namespace ScoreBoardApp.Scripts
                 using (SHA256 sha256Hash = SHA256.Create())
                 {
                     byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(password));
- 
+
                     StringBuilder builder = new StringBuilder();
                     for (int i = 0; i < bytes.Length; i++)
                     {
@@ -37,7 +37,8 @@ namespace ScoreBoardApp.Scripts
         }
         internal bool CanLogin(string username, string password)
         {
-            if (string.IsNullOrEmpty(username)){
+            if (string.IsNullOrEmpty(username))
+            {
                 MessageBox.Show("Enter the username");
                 return false;
             }
@@ -48,7 +49,7 @@ namespace ScoreBoardApp.Scripts
             }
             else
             {
-                if(this.username == username && this.password == Hash(password))
+                if (this.username == username && this.password == Hash(password))
                 {
                     return true;
                 }

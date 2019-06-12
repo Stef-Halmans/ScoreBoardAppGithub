@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Scripts\DatabaseController.cs" />
+    <Compile Include="Scripts\Login.cs" />
     <Compile Include="Windows\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
