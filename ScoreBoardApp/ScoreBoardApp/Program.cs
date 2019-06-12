@@ -14,9 +14,6 @@ namespace ScoreBoardApp
         public static int ScorePlayer1;
         public static int ScorePlayer2;
 
-        public static int HitsPlayer1;
-        public static int HitsPlayer2;
-
         public static Login Login;
         public static DatabaseController DatabaseController;
 
@@ -36,9 +33,6 @@ namespace ScoreBoardApp
             DatabaseController = new DatabaseController(DatabaseUrl);
             ScorePlayer1 = 0;
             ScorePlayer2 = 0;
-
-            HitsPlayer1 = 0;
-            HitsPlayer2 = 0;
 
             Login = new Login("Username", "e7cf3ef4f17c3999a94f2c6f612e8a888e5b1026878e4e19398b23bd38ec221a");
             Application.Run(new LoginPage());

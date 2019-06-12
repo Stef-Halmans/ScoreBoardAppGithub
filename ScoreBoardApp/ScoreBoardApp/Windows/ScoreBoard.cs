@@ -15,6 +15,7 @@ namespace ScoreBoardApp.Windows
         public ScoreBoard()
         {
             InitializeComponent();
+
         }
     }
 }
