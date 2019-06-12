@@ -22,26 +22,30 @@ public class DatabaseController
     public void SubmitData(string player, string data)
     {
         byte[] iv = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 };
-        byte[] dataBytes = Encoding.UTF8.GetBytes(player+ data);
+        byte[] dataBytes = Encoding.Unicode.GetBytes("abcdefghijklmnop");
+        string dataToEncrypt = player + data;
         byte[] dataToSend;
 
 
-        SymmetricAlgorithm encryption = Aes.Create();
-        encryption.BlockSize = 128;
-        encryption.IV = iv;
-        encryption.Key = Encoding.Unicode.GetBytes("abcdefghijklmnop");
-        encryption.Mode = CipherMode.CBC;
+        Aes aes = Aes.Create();
+        aes.BlockSize = 128;
+        aes.Key = Encoding.UTF8.GetBytes("abcdefghijklmnop");
+        aes.Padding = PaddingMode.Zeros;
+        aes.Mode = CipherMode.ECB;
+        ICryptoTransform encryptor = aes.CreateEncryptor();
         using (MemoryStream memoryStream = new MemoryStream())
         {
-            using (CryptoStream cryptoStream = new CryptoStream(memoryStream, encryption.CreateEncryptor(), CryptoStreamMode.Write))
+            using (CryptoStream cryptoStream = new CryptoStream(memoryStream, encryptor, CryptoStreamMode.Write))
             {
-                Console.WriteLine(dataBytes.Length.ToString());
-                cryptoStream.Write(dataBytes, 0, dataBytes.Length);
+                using(StreamWriter streamWriter = new StreamWriter(cryptoStream))
+                {
+                    streamWriter.Write(dataToEncrypt);
+                }
+                dataToSend = memoryStream.ToArray();
  
             }
-            dataToSend = memoryStream.ToArray();
         }
-        for (int i = 0; i < dataToSend.Length; i++){
+         for (int i = 0; i < dataToSend.Length; i++){
             Console.WriteLine(dataToSend[i]);
         }
 
