@@ -27,15 +27,17 @@ namespace ScoreBoardApp.Windows
 
         private void Timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
         {
-
+            Console.WriteLine("timer");
             string data = Program.DatabaseController.GetData("getScore");
             if(int.Parse(data.Substring(0,1)) > Program.ScorePlayer1)
             {
+                Program.ScorePlayer1 = int.Parse(data.Substring(0, 1));
                 Delegate del = new Delegate(ChangePlayer1Score);
                 Invoke(del);
             }
             else if(int.Parse(data.Substring(1,1)) > Program.ScorePlayer2)
             {
+                Program.ScorePlayer2 = int.Parse(data.Substring(1, 1));
                 Delegate del = new Delegate(ChangePlayer2Score);
                 Invoke(del);
             }
