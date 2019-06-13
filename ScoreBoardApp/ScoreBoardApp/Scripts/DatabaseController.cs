@@ -15,8 +15,37 @@ public class DatabaseController
         this.url = url;
     }
 
-  
-   
+    public string DecryptedData(string dataToDecrypt)
+    {
+        byte[] decryptedData;
+        byte[] dataToDecryptBytes = Encoding.UTF8.GetBytes(dataToDecrypt);
+        Aes aes = Aes.Create();
+        aes.BlockSize = 128;
+        aes.Key = Encoding.UTF8.GetBytes("abcdefghijklmnop");
+        aes.Padding = PaddingMode.Zeros;
+        aes.Mode = CipherMode.ECB;
+        ICryptoTransform decrypter = aes.CreateDecryptor();
+        using(MemoryStream memoryStream = new MemoryStream(dataToDecryptBytes))
+        {
+            using (CryptoStream cryptoStream = new CryptoStream(memoryStream, decrypter, CryptoStreamMode.Read))
+            {
+                byte[] decryptingData;
+                using(BinaryReader binaryReader = new BinaryReader(cryptoStream))
+                {
+                    decryptedData = binaryReader.ReadBytes(dataToDecryptBytes.Length);
+                }
+                //cryptoStream.Read(decryptingData, 0, decryptingData.Length);
+                //using (StreamWriter streamWriter = new StreamWriter(cryptoStream))
+                //{
+                //    streamWriter.Write(dataToDecrypt);
+                //}
+                //decryptedData = memoryStream.ToArray();
+                return Encoding.UTF8.GetString(decryptedData);
+            }
+        }
+ 
+    }
+
 
 
     public void SubmitData(string player, string data)
@@ -49,10 +78,6 @@ public class DatabaseController
             Console.WriteLine(dataToSend[i]);
         }
 
-
-
-
-
         HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url + "post");
         request.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
         request.ContentLength = dataToSend.Length;
@@ -84,33 +109,11 @@ public class DatabaseController
         using(StreamReader reader = new StreamReader(stream))
         {
             return reader.ReadToEnd();
+            Console.WriteLine(reader.ReadToEnd());
         }
 
 
     }
+
 }
-public static class ThreadHelperClass
-{
-    delegate void SetTextCallback(Form f, Control ctrl, string text);
-    /// <summary>
-    /// Set text property of various controls
-    /// </summary>
-    /// <param name="form">The calling form</param>
-    /// <param name="ctrl"></param>
-    /// <param name="text"></param>
-    public static void SetText(Form form, Control ctrl, string text)
-    {
-        // InvokeRequired required compares the thread ID of the 
-        // calling thread to the thread ID of the creating thread. 
-        // If these threads are different, it returns true. 
-        if (ctrl.InvokeRequired)
-        {
-            SetTextCallback d = new SetTextCallback(SetText);
-            form.Invoke(d, new object[] { form, ctrl, text });
-        }
-        else
-        {
-            ctrl.Text = text;
-        }
-    }
-}
+

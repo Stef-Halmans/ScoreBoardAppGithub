@@ -39,22 +39,25 @@ namespace ScoreBoardApp
         private void Timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
         {
 
-            string newHits = Program.DatabaseController.GetData("getHits");
-            Console.WriteLine(newHits);
+            string newHitsEncrypted = Program.DatabaseController.GetData("getHits");
+            Console.WriteLine(newHitsEncrypted);
+            string newHits = Program.DatabaseController.DecryptedData(newHitsEncrypted);
+            
+            Console.WriteLine("hits"+ newHits);
           //  Console.WriteLine(newHits.Substring(1, 1));
-            if (int.Parse(newHits.Substring(0,1)) > Program.HitsPlayer1)
-            {
-                Program.HitsPlayer1 = int.Parse(newHits.Substring(0, 1));
-                Delegate del = new Delegate(Player1Hit);
-                Invoke(del);
+            //if (int.Parse(newHits.Substring(0,1)) > Program.HitsPlayer1)
+            //{
+            //    Program.HitsPlayer1 = int.Parse(newHits.Substring(0, 1));
+            //    Delegate del = new Delegate(Player1Hit);
+            //    Invoke(del);
 
-            }
-            else if (int.Parse(newHits.Substring(1, 1)) > Program.HitsPlayer2)
-            {
-                Program.HitsPlayer2 = int.Parse(newHits.Substring(1, 1));
-                Delegate del = new Delegate(Player2Hit);
-                Invoke(del);
-            }
+            //}
+            //else if (int.Parse(newHits.Substring(1, 1)) > Program.HitsPlayer2)
+            //{
+            //    Program.HitsPlayer2 = int.Parse(newHits.Substring(1, 1));
+            //    Delegate del = new Delegate(Player2Hit);
+            //    Invoke(del);
+            //}
         }
 
         public void Player1Hit()
@@ -159,5 +162,7 @@ namespace ScoreBoardApp
         {
             ClearHitMessage("2");
         }
+
+
     }
 }
