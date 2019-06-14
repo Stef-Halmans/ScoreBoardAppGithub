@@ -29,15 +29,17 @@ namespace ScoreBoardApp.Windows
         {
             Console.WriteLine("timer");
             string data = Program.DatabaseController.GetData("getScore");
-            if(int.Parse(data.Substring(0,1)) > Program.ScorePlayer1)
+            Console.WriteLine(data);
+            string[] dataArray = data.Split(',');
+            if(int.Parse(dataArray[0]) > Program.ScorePlayer1)
             {
-                Program.ScorePlayer1 = int.Parse(data.Substring(0, 1));
+                Program.ScorePlayer1 = int.Parse(dataArray[0]);
                 Delegate del = new Delegate(ChangePlayer1Score);
                 Invoke(del);
             }
-            else if(int.Parse(data.Substring(1,1)) > Program.ScorePlayer2)
+            else if(int.Parse(dataArray[1]) > Program.ScorePlayer2)
             {
-                Program.ScorePlayer2 = int.Parse(data.Substring(1, 1));
+                Program.ScorePlayer2 = int.Parse(dataArray[1]);
                 Delegate del = new Delegate(ChangePlayer2Score);
                 Invoke(del);
             }
