@@ -74,11 +74,8 @@ public class DatabaseController
  
             }
         }
-         for (int i = 0; i < dataToSend.Length; i++){
-            Console.WriteLine(dataToSend[i]);
-        }
 
-        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url + "post");
+        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url + "postWindows");
         request.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
         request.ContentLength = dataToSend.Length;
         request.ContentType = "text/plain";
@@ -96,7 +93,8 @@ public class DatabaseController
         using (StreamReader reader = new StreamReader(stream))
         {
             Console.WriteLine(reader.ReadToEnd());
-            MessageBox.Show(reader.ReadToEnd());
+
+
         }
     }
     public string GetData(string path)
